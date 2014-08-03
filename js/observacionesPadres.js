@@ -97,7 +97,18 @@ function formObservacionesCallback(data)
 {
     //alert("Del "+ data);
 	//inicializarFormularioObservaciones();
-	alert("Observación Enviada");
-	history.back();
+	//alert("Observación Enviada");
+	navigator.notification.alert(
+		    'Observación Enviada!',     // mensaje (message)
+		    okObsercacion,         // función 'callback' (alertCallback)
+		    'MIA',            // titulo (title)
+		    'Cerrar'                // nombre del botón (buttonName)
+		    );
+	
+	//history.back();
     
 }
+
+function okObsercacion()
+{	history.back();
+	}

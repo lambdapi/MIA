@@ -117,7 +117,8 @@ function ajaxControlFecha()
 	$id_tutor=window.localStorage.getItem("id_tutor");
 		    
     
-   // alert("ajaxControlFecha:" + $fecha);
+	cargandoDatos();
+	
         $.ajax({
         type:'GET',
         url: URL_REST_BASE +'restapi/alumnosGetFechaControlDiario.php',
@@ -147,6 +148,8 @@ function ajaxControlHoy()
 	$id_alumno=window.localStorage.getItem("id_alumno");
 	$id_tutor=window.localStorage.getItem("id_tutor");
 	
+	cargandoDatos();
+	
 	$.ajax({
         type:'GET',
         url: URL_REST_BASE + 'restapi/alumnosGetUltimoControlDiario2.php',
@@ -164,6 +167,9 @@ function ajaxControlHoy()
 	});
 	
 }
+
+
+
 
 function ajaxFichaReducida()
 {
@@ -199,6 +205,15 @@ function getImgIcon(urlcorta)
     }
     return urlIcon;
 }
+
+
+function cargandoDatos()
+{
+    $("#table-comidas").empty();
+    $("#table-comidas").append("<tr><td>CARGANDO DATOS....</td></tr>");
+	
+}
+
 
 function controldiarioCallback(data){
  //   alert("controldiario");
